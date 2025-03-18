@@ -7,11 +7,13 @@ namespace Util
             Click,
             Drag,
         }
-
-        public enum MouseEvent
+        
+        public enum GameState
         {
-            Press,
-            Click
+            GameReady,
+            GameBegin,
+            GamePlay,
+            GameEnd
         }
     }
 }
