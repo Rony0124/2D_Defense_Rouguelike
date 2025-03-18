@@ -9,7 +9,6 @@ namespace Item
         public override void SetValue(int value)
         {
             ItemValue.Value = value;
-            _info.onConsumeEffect?.Invoke();
         }
     }
 }

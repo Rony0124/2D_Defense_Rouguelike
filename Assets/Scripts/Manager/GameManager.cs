@@ -13,7 +13,12 @@ namespace Manager
         [SerializeField]
         private float gameReadyDuration;
         
+        [Header("Player")]
+        private PlayerController player;
+        
         private ObservableVar<Define.GameState> gameState;
+        
+        public PlayerController Player => player;
         
         private void Awake()
         {

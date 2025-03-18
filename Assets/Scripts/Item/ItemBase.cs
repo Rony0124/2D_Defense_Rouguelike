@@ -6,11 +6,11 @@ namespace Item
     {
         public ObservableVar<T> ItemValue = new();
         
-        protected ItemInfo _info;
+        public ItemInfo info;
 
         protected ItemBase(ItemInfo info)
         {
-            _info = info;
+            this.info = info;
         }
 
         protected ItemBase(ItemInfo info, T itemValue) : this(info)

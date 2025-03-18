@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 namespace InGame
 {
-    public class PlayerController : MonoBehaviour
+    public partial class PlayerController : MonoBehaviour
     {
-       
+        private void Awake()
+        {
+            equippedStoneItems = new();
+        }
     }
 }
