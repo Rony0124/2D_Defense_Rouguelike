@@ -1,6 +1,7 @@
 using System.Linq;
 using Data;
 using Manager;
+using TMPro;
 using UnityEngine;
 using Util;
 
@@ -9,7 +10,7 @@ namespace UI.InGame
     public class StoneEquipmentSlot : MonoBehaviour
     {
         [SerializeField] private Define.SpellItem itemType;
-        
+        [SerializeField] private TextMeshProUGUI itemCountText;
         [SerializeField] private Transform activeIcon;
         [SerializeField] private Transform inactiveIcon;
 
@@ -22,17 +23,29 @@ namespace UI.InGame
             if(player != null)
                 return;
 
-            if (player.equippedSpellItems
-                .Select(spell => spell.info as SpellInfo)
-                .Any(info => info != null && info.itemType == itemType))
+            foreach (var spellItem in player.equippedSpellItems)
             {
-                activeIcon.gameObject.SetActive(true);
-                inactiveIcon.gameObject.SetActive(false);
-                return;
+                if (spellItem == null)
+                {
+                    continue;
+                }
+
+                if (spellItem.info is SpellInfo spellInfo)
+                {
+                    if (spellInfo.itemType == itemType)
+                    {
+                        activeIcon.gameObject.SetActive(true);
+                        inactiveIcon.gameObject.SetActive(false);
+                
+                        itemCountText.text = spellItem.ItemValue.Value.ToString();
+                        return;
+                    }
+                }
             }
             
             activeIcon.gameObject.SetActive(false);
             inactiveIcon.gameObject.SetActive(true);
+            itemCountText.text = string.Empty;
         }
     }
 }

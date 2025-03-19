@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Data;
 using InGame.Player;
 using Item;
 using Manager;
+using Sirenix.Utilities;
 using UI.Core;
 using UnityEngine;
 
@@ -24,6 +26,16 @@ namespace UI.InGame
            inGameView.SpellButton.onClick.AddListener(OnSpellButtonClicked);
            inGameView.EnhanceButton.onClick.AddListener(OnEnhanceButtonClicked);
            inGameView.MineButton.onClick.AddListener(OnMinButtonClicked);
+           
+           player.equippedSpellItems.ListChanged += EquippedSpellItemsOnListChanged;
+       }
+
+       private void EquippedSpellItemsOnListChanged(object sender, ListChangedEventArgs e)
+       {
+          if(player.equippedSpellItems.IsNullOrEmpty())
+              return;
+          
+          inGameView.CollectionUpdateHandler.UpdateSlots();
        }
 
        private void OnBountyButtonClicked()
