@@ -9,7 +9,6 @@ namespace UI.InGame
         
         public void UpdateSlots()
         {
-            Debug.Log("?");
             foreach (var slot in slots)
             {
                 slot.UpdateIcon();

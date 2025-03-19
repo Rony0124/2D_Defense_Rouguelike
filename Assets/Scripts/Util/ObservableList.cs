@@ -21,12 +21,14 @@ namespace Util
         public new bool Remove(T item)
         {
             var index = IndexOf(item);
-            var removed = base.Remove(item);
-
-            if (removed && index >= 0)
+            if (index >= 0)
             {
                 OnListChanged(new ListChangedEventArgs(ListChangedType.ItemDeleted, index));
             }
+            
+            var removed = base.Remove(item);
+
+           
             return removed;
         }
     }

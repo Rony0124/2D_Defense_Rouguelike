@@ -10,8 +10,6 @@ namespace Data
         [SerializeField] private List<T> assets;
         
         public Dictionary<Guid, T> assetGuidLookup = new(); 
-
-        public int Count => assets.Count;
         
 #if UNITY_EDITOR
         private void Awake()

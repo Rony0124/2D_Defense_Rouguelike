@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   itemType: 1
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3017149750585600287, guid: b37ac4ad51c3a436e8a1a0068e4ab4dd, type: 3}
   projectileSpeed: 0
   projectileRange: 0
   spellDamage: 0

@@ -11,11 +11,12 @@ namespace UI.InGame
     {
         [SerializeField] private Define.SpellItem itemType;
         [SerializeField] private TextMeshProUGUI itemCountText;
+        [SerializeField] private SpellSlotItemIcon activeSlotIcon;
         [SerializeField] private Transform activeIcon;
         [SerializeField] private Transform inactiveIcon;
 
         private SpellSlotItemIcon icon;
-
+        
         public void UpdateIcon()
         {
             var player = GameManager.Instance.Player;
@@ -35,7 +36,8 @@ namespace UI.InGame
                     {
                         activeIcon.gameObject.SetActive(true);
                         inactiveIcon.gameObject.SetActive(false);
-                
+                        
+                        activeSlotIcon.SetIcon(spellItem);
                         itemCountText.text = spellItem.ItemValue.Value.ToString();
                         return;
                     }

@@ -10,7 +10,7 @@ namespace InGame.Player
     public partial class PlayerController
     {
         public ObservableList<SpellItem> equippedSpellItems;
-        public List<IProjectileHandler> projectileHandlers;
+        public List<ProjectileShooter> projectileHandlers;
 
         public int itemProbabilityLevel { get; set; }
         
@@ -36,6 +36,14 @@ namespace InGame.Player
                 case ListChangedType.ItemChanged:
                     break;
                 case ListChangedType.ItemDeleted:
+                    var rItem = equippedSpellItems[e.NewIndex];
+                    var rShooter = projectileHandlers.Find(projectileShooter => projectileShooter.spellInfo.itemType == rItem.spellInfo.itemType);
+
+                    var poolProjectile = rShooter.poolProjectile;
+                    Destroy(poolProjectile);
+
+                    projectileHandlers.Remove(rShooter);
+                    
                     break;
             }
         }
