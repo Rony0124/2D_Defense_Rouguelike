@@ -10,7 +10,7 @@ namespace Util
         
         public enum GameState
         {
-            GameReady,
+            None,
             GameBegin,
             GamePlay,
             GameEnd

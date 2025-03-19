@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Item
 {
-    [CreateAssetMenu(fileName = "StoneItemInfo", menuName = "Data/Item/CurrencyItemInfo")]
+    [CreateAssetMenu(fileName = "StoneItemInfo", menuName = "Data/Item/StoneItemInfo")]
     public class StoneItemInfo : ItemInfo
     {
        
