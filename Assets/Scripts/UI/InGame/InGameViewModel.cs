@@ -26,16 +26,6 @@ namespace UI.InGame
            inGameView.SpellButton.onClick.AddListener(OnSpellButtonClicked);
            inGameView.EnhanceButton.onClick.AddListener(OnEnhanceButtonClicked);
            inGameView.MineButton.onClick.AddListener(OnMinButtonClicked);
-           
-           player.equippedSpellItems.ListChanged += EquippedSpellItemsOnListChanged;
-       }
-
-       private void EquippedSpellItemsOnListChanged(object sender, ListChangedEventArgs e)
-       {
-          if(player.equippedSpellItems.IsNullOrEmpty())
-              return;
-          
-          inGameView.CollectionUpdateHandler.UpdateSlots();
        }
 
        private void OnBountyButtonClicked()
@@ -51,11 +41,20 @@ namespace UI.InGame
        private void OnSpellButtonClicked()
        {
            var rItem = GetRandomItem();
+           if (rItem == null)
+           {
+               Debug.Log("꽝이구먼유");
+               return;
+           }
+              
+           
            var itemIndex = player.equippedSpellItems.FindIndex(item => item.info.Id == rItem.Id);
            if (itemIndex < 0)
            {
                SpellItem newItem = new SpellItem(rItem, 1);
                player.equippedSpellItems.Add(newItem);
+               
+               Debug.Log(rItem.itemType);
            }
            else
            {
@@ -63,6 +62,10 @@ namespace UI.InGame
                newItem.ItemValue.Value++;
                player.equippedSpellItems[itemIndex] = newItem;
            }
+           
+           Debug.Log(rItem.itemType);
+           
+           inGameView.spellCollectionPanel.UpdateSlots();
        }
 
        private void OnEnhanceButtonClicked()

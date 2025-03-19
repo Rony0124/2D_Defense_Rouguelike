@@ -7,7 +7,7 @@ using Util;
 
 namespace UI.InGame
 {
-    public class StoneEquipmentSlot : MonoBehaviour
+    public class SpellEquipmentSlot : MonoBehaviour
     {
         [SerializeField] private Define.SpellItem itemType;
         [SerializeField] private TextMeshProUGUI itemCountText;
@@ -19,17 +19,16 @@ namespace UI.InGame
         public void UpdateIcon()
         {
             var player = GameManager.Instance.Player;
-            
-            if(player != null)
+            if(player == null)
                 return;
-
+            
             foreach (var spellItem in player.equippedSpellItems)
             {
                 if (spellItem == null)
                 {
                     continue;
                 }
-
+              
                 if (spellItem.info is SpellInfo spellInfo)
                 {
                     if (spellInfo.itemType == itemType)

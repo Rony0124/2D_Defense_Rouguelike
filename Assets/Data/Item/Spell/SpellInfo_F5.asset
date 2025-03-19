@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 639bcaee4862749d993d21d8ce2254a1, type: 3}
-  m_Name: SpellInfo_1
+  m_Name: SpellInfo_F5
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  itemType: 0
-  projectilePrefab: {fileID: 3017149750585600287, guid: b37ac4ad51c3a436e8a1a0068e4ab4dd, type: 3}
-  projectileSpeed: 1
+  itemType: 11
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 0
   projectileRange: 0
-  spellDamage: 10
-  spellInterval: 2
-  spellDuration: 3
+  spellDamage: 0
+  spellInterval: 0
+  spellDuration: 0

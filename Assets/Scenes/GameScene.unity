@@ -5829,7 +5829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacf2c3edf49546dcaecc5dc5f3f896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 950251409}
 --- !u!114 &933793803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5842,6 +5842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f054f96214b6c4e75813dab1d4822a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellCollectionPanel: {fileID: 1712123844}
 --- !u!114 &933793804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,8 +6113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnController: {fileID: 1724151900}
-  testSpells:
-  - {fileID: 11400000, guid: c253c48c5312f413ab18337bfe87d7e8, type: 2}
+  testSpells: []
   poolObj: {fileID: 5864967030036041990, guid: 110f9bc38db764990af391fcd984d049, type: 3}
 --- !u!1 &987337409
 GameObject:

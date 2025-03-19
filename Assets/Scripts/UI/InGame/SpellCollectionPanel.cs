@@ -3,12 +3,13 @@ using UnityEngine;
 
 namespace UI.InGame
 {
-    public class StoneCollectionPanel : MonoBehaviour, ICollectionUpdateHandler
+    public class SpellCollectionPanel : MonoBehaviour, ICollectionUpdateHandler
     {
-        [SerializeField] private List<StoneEquipmentSlot> slots;
+        [SerializeField] private List<SpellEquipmentSlot> slots;
         
         public void UpdateSlots()
         {
+            Debug.Log("?");
             foreach (var slot in slots)
             {
                 slot.UpdateIcon();

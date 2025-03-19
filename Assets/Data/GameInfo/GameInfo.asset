@@ -66,3 +66,36 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+  itemProbability:
+  - probabilities:
+    - 98
+    - 2
+    - 0
+    - 0
+    - 0
+    - 0
+  - probabilities:
+    - 92
+    - 4
+    - 2
+    - 1
+    - 1
+    - 0
+  - probabilities:
+    - 88
+    - 7
+    - 3
+    - 1
+    - 1
+    - 0
+  - probabilities:
+    - 80
+    - 10
+    - 5
+    - 3
+    - 1
+    - 1
+  itemPools:
+  - Grade: 0
+    Items:
+    - {fileID: 11400000, guid: c253c48c5312f413ab18337bfe87d7e8, type: 2}
