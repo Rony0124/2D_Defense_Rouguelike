@@ -19,6 +19,7 @@ namespace Manager
         private float gameReadyDuration;
         
         [Header("Player")]
+        [SerializeField]
         private PlayerController player;
         
         private ObservableVar<Define.GameState> gameState;

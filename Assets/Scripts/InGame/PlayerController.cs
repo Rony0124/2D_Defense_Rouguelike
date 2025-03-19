@@ -4,7 +4,7 @@ using Util;
 
 namespace InGame
 {
-    public partial class PlayerController : MonoBehaviour
+    public partial class PlayerController : MonoBehaviour, IDamageHandler
     {
         public ObservableVar<bool> IsDead;
 
@@ -30,7 +30,7 @@ namespace InGame
             }
         }
 
-        public void TakeDamage()
+        public void TakeDamage(float damage)
         {
             
         }

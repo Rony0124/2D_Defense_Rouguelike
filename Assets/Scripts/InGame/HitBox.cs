@@ -4,16 +4,19 @@ namespace InGame
 {
     public class HitBox : MonoBehaviour
     {
-        private EnemyController enemy;
-        private void Awake()
-        {
-            enemy = GetComponent<EnemyController>();
-        }
+        public LayerMask layerMask;
         
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerEnter(Collider other)
         {
-        
+            if(layerMask == (layerMask | (1 << other.gameObject.layer)))
+            {
+                HurtBox hurtBox = other.GetComponent<HurtBox>();
+
+                if (hurtBox)
+                {
+                    hurtBox.TakeDamage(this);
+                }
+            }
         }
     }
 }

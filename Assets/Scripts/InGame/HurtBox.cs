@@ -1,17 +1,27 @@
+using System;
 using UnityEngine;
 
 namespace InGame
 {
     public class HurtBox : MonoBehaviour
     {
-        [SerializeField] private PlayerController player;
-        
+        private IDamageHandler damageHandler;
+
+        private void Awake()
+        {
+            damageHandler = GetComponentInParent<IDamageHandler>();
+        }
+
         public void TakeDamage(HitBox hitBox)
         {
             if (!hitBox)
                 return;
+
+            var projectile = hitBox.GetComponent<Projectile>();
             
-            player.TakeDamage();
+            damageHandler.TakeDamage(projectile.damage);
         }
     }
+
+
 }

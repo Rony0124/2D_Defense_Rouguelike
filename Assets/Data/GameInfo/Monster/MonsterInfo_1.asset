@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0677a88f6db0b4fa508609e4bd82c6, type: 3}
   m_Name: MonsterInfo_1
   m_EditorClassIdentifier: 
-  monsterGraphic: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  monsterGraphic: {fileID: 6968419479122013640, guid: 253df09c01386b547bd738b23af0c02b, type: 3}
   moveSpeed: 2

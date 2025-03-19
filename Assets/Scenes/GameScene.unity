@@ -4242,6 +4242,7 @@ MonoBehaviour:
   gameInfo: {fileID: 11400000, guid: f274256e86869a148b9226e5b8d107ca, type: 2}
   timer: {fileID: 0}
   gameReadyDuration: 5
+  player: {fileID: 950251409}
 --- !u!1 &730963384
 GameObject:
   m_ObjectHideFlags: 0
