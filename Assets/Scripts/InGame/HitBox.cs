@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace InGame
@@ -5,8 +6,8 @@ namespace InGame
     public class HitBox : MonoBehaviour
     {
         public LayerMask layerMask;
-        
-        private void OnTriggerEnter(Collider other)
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if(layerMask == (layerMask | (1 << other.gameObject.layer)))
             {

@@ -3,6 +3,7 @@ using Data;
 using InGame;
 using UnityEngine;
 using Util;
+using PlayerController = InGame.Player.PlayerController;
 
 namespace Manager
 {

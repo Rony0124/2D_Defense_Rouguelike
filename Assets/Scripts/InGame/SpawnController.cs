@@ -19,6 +19,7 @@ namespace InGame
         void Awake()
         {
             enemies = new();
+            enemyPool.InitializePool();
         }
 
         public void InitSpawn()

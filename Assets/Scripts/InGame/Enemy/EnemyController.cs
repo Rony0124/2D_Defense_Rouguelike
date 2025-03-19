@@ -100,6 +100,8 @@ namespace InGame
         public void TakeDamage(float damage)
         {
             health -= damage;
+            
+            Debug.Log("enemy Damaged");
         }
         
         private void SetAnimatorParamTrigger(int id)

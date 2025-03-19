@@ -19,7 +19,7 @@ namespace InGame
 
             var projectile = hitBox.GetComponent<Projectile>();
             
-            damageHandler.TakeDamage(projectile.damage);
+            damageHandler.TakeDamage(projectile.spellInfo.spellDamage);
         }
     }
 

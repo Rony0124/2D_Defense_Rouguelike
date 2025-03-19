@@ -12,10 +12,16 @@ namespace InGame
 
         protected virtual void Awake()
         {
-            InitializePool();
+            //InitializePool();
         }
 
-        private void InitializePool()
+        public void SetPool(T obj, int poolSize = 10)
+        {
+            prefab = obj;
+            initialPoolSize = poolSize;
+        }
+
+        public void InitializePool()
         {
             for (int i = 0; i < initialPoolSize; i++)
             {

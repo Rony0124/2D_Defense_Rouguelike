@@ -4241,7 +4241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInfo: {fileID: 11400000, guid: f274256e86869a148b9226e5b8d107ca, type: 2}
   timer: {fileID: 0}
-  gameReadyDuration: 5
+  gameReadyDuration: 1
   player: {fileID: 950251409}
 --- !u!1 &730963384
 GameObject:
@@ -6080,9 +6080,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 518154745}
-  - {fileID: 1724151899}
   - {fileID: 173459939}
   - {fileID: 1486511196}
+  - {fileID: 1724151899}
+  - {fileID: 2028016213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &950251409
@@ -6098,6 +6099,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnController: {fileID: 1724151900}
+  testSpells:
+  - {fileID: 11400000, guid: c253c48c5312f413ab18337bfe87d7e8, type: 2}
+  poolObj: {fileID: 5864967030036041990, guid: 110f9bc38db764990af391fcd984d049, type: 3}
 --- !u!1 &987337409
 GameObject:
   m_ObjectHideFlags: 0
@@ -12720,6 +12724,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994464384}
   m_CullTransparentMesh: 1
+--- !u!1 &2028016212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028016213}
+  - component: {fileID: 2028016214}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2028016213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028016212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 950251408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028016214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028016212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b334c6db4962941d39eda1f2b8e215e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefabs: []
 --- !u!1 &2041722255
 GameObject:
   m_ObjectHideFlags: 0

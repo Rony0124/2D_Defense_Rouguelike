@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 namespace UI.InGame
 {
-    public class StoneSlotItemIcon : MonoBehaviour
+    public class SpellSlotItemIcon : MonoBehaviour
     {
         [SerializeField] private Image iconImage;
         
-        private StoneItem item;
+        private SpellItem item;
 
-        public void SetStoneItem(StoneItem item)
+        public void SetStoneItem(SpellItem item)
         {
             this.item = item;
             

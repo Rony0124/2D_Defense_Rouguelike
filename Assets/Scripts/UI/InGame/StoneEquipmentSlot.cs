@@ -1,3 +1,5 @@
+using System.Linq;
+using Data;
 using Manager;
 using UnityEngine;
 using Util;
@@ -6,12 +8,12 @@ namespace UI.InGame
 {
     public class StoneEquipmentSlot : MonoBehaviour
     {
-        [SerializeField] private Define.StoneItem itemType;
+        [SerializeField] private Define.SpellItem itemType;
         
         [SerializeField] private Transform activeIcon;
         [SerializeField] private Transform inactiveIcon;
 
-        private StoneSlotItemIcon icon;
+        private SpellSlotItemIcon icon;
 
         public void UpdateIcon()
         {
@@ -20,16 +22,17 @@ namespace UI.InGame
             if(player != null)
                 return;
 
-            if (player.equippedStoneItems.TryGetValue(itemType, out var stoneItem))
+            if (player.equippedSpellItems
+                .Select(spell => spell.info as SpellInfo)
+                .Any(info => info != null && info.itemType == itemType))
             {
                 activeIcon.gameObject.SetActive(true);
                 inactiveIcon.gameObject.SetActive(false);
+                return;
             }
-            else
-            {
-                activeIcon.gameObject.SetActive(false);
-                inactiveIcon.gameObject.SetActive(true);
-            }
+            
+            activeIcon.gameObject.SetActive(false);
+            inactiveIcon.gameObject.SetActive(true);
         }
     }
 }

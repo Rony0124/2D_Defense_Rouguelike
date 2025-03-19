@@ -16,7 +16,7 @@ namespace Util
             GameEnd
         }
 
-        public enum StoneItem
+        public enum SpellItem
         {
             Ground_0,
             Ground_1,
