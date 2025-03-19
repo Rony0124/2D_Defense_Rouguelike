@@ -22,7 +22,6 @@ namespace UI.InGame
        private void Start()
        {
            inGameView.BountyButton.onClick.AddListener(OnBountyButtonClicked);
-           inGameView.PetButton.onClick.AddListener(OnPetButtonClicked);
            inGameView.SpellButton.onClick.AddListener(OnSpellButtonClicked);
            inGameView.EnhanceButton.onClick.AddListener(OnEnhanceButtonClicked);
            inGameView.MineButton.onClick.AddListener(OnMinButtonClicked);
@@ -45,7 +44,7 @@ namespace UI.InGame
 
        private void OnPetButtonClicked()
        {
-           
+           inGameView.petCollectionPanel.gameObject.SetActive(!inGameView.petCollectionPanel.gameObject.activeSelf);
        }
 
        private void OnSpellButtonClicked()

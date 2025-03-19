@@ -119,7 +119,7 @@ namespace InGame.Enemy
         private async UniTaskVoid OnDeadTask()
         {
             SetAnimatorParamTrigger(DeathId);
-            await UniTask.WaitForSeconds(2);
+            await UniTask.WaitForSeconds(1);
             enemyPool.ReturnObject(this);
         }
         

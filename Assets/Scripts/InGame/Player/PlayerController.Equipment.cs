@@ -10,6 +10,7 @@ namespace InGame.Player
     public partial class PlayerController
     {
         public ObservableList<SpellItem> equippedSpellItems;
+        public List<PetInfo> petInfos;
         public List<ProjectileShooter> projectileHandlers;
 
         public int itemProbabilityLevel { get; set; }
