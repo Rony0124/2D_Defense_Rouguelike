@@ -29,6 +29,7 @@ namespace Manager
         public PlayerController Player => player;
         public Define.GameState GameState => gameState.Value;
         public int CurrentGameDifficulty => currentGameDifficulty;
+        public GameInfo GameInfo => gameInfo;
         
         private void Awake()
         {

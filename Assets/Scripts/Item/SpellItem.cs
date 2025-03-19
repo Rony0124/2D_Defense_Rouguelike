@@ -1,3 +1,5 @@
+using Data;
+
 namespace Item
 {
     public class SpellItem : ItemBase<int>

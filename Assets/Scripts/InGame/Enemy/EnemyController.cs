@@ -1,13 +1,16 @@
+using Cysharp.Threading.Tasks;
 using Data;
 using Manager;
 using UnityEngine;
 using Util;
-  
-namespace InGame
+
+namespace InGame.Enemy
 {
     public class EnemyController : MonoBehaviour, IDamageHandler
     {
         public ObservableVar<bool> IsDead;
+
+        public ObjectPoolEnemy enemyPool { get; set; }
         
         [SerializeField]
         private float attackInterval;
@@ -30,6 +33,7 @@ namespace InGame
         {
             IsDead = new();
             IsDead.Value = false;
+            IsDead.OnValueChanged += OnDeadValueChanged;
         }
 
         public void Initialize(MonsterInfo info, float power, float health, Transform endPoint)
@@ -100,8 +104,23 @@ namespace InGame
         public void TakeDamage(float damage)
         {
             health -= damage;
-            
-            Debug.Log("enemy Damaged");
+            if(health <= 0)
+                IsDead.Value = true;
+        }
+
+        private void OnDeadValueChanged(bool oldValue, bool newValue)
+        {
+            if (newValue)
+            {
+                OnDeadTask().Forget();
+            }
+        }
+
+        private async UniTaskVoid OnDeadTask()
+        {
+            SetAnimatorParamTrigger(DeathId);
+            await UniTask.WaitForSeconds(2);
+            enemyPool.ReturnObject(this);
         }
         
         private void SetAnimatorParamTrigger(int id)

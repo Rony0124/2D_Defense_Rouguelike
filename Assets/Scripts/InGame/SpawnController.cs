@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Data;
+using InGame.Enemy;
 using Manager;
 using UnityEngine;
 using Util;
@@ -80,6 +81,7 @@ namespace InGame
             var health = GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Health, difficulty);
             
             currentEnemy.Initialize(monsterInfo, power,  health, endPoint);
+            currentEnemy.enemyPool = enemyPool;
             
             enemies.Add(currentEnemy);
         }

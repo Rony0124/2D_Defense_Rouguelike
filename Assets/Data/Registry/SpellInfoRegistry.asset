@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a869af74e0b03464faf8fd68795ac2c8, type: 3}
-  m_Name: CurrencyItemInfo_Gold
+  m_Script: {fileID: 11500000, guid: c80e31e02cb4d41878ed7ac8b16c694c, type: 3}
+  m_Name: SpellInfoRegistry
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  assets:
+  - {fileID: 11400000, guid: c253c48c5312f413ab18337bfe87d7e8, type: 2}

@@ -79,11 +79,7 @@ namespace InGame.Player
             {
                 var spellItem = new SpellItem(spell, 1);
                 equippedSpellItems.Add(spellItem);
-                
-              
             }
-
-            
         }
 
         private void OnGameEnd()

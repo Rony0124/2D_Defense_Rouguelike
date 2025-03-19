@@ -1,9 +1,9 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Item
+namespace Data
 {
-    public class ItemInfo : ScriptableObject
+    public class ItemInfo : RegistryItem
     {
         [Title("Icon")]
         public Sprite icon;

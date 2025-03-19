@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 4
   activeIcon: {fileID: 1712161659}
   inactiveIcon: {fileID: 1645505619}
 --- !u!1 &106502694
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 234613705}
   - component: {fileID: 234613706}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_3
+  m_Name: EqupSlot_Fire_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 9
   activeIcon: {fileID: 523121323}
   inactiveIcon: {fileID: 621724636}
 --- !u!1 &277298077
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 286131299}
   - component: {fileID: 286131300}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_5
+  m_Name: EqupSlot_Ice_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 17
   activeIcon: {fileID: 38455016}
   inactiveIcon: {fileID: 1600556223}
 --- !u!1 &290270979
@@ -1902,7 +1902,7 @@ GameObject:
   - component: {fileID: 324634036}
   - component: {fileID: 324634037}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_4
+  m_Name: EqupSlot_Ice_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 16
   activeIcon: {fileID: 754463556}
   inactiveIcon: {fileID: 2134383572}
 --- !u!1 &332283692
@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 5
   activeIcon: {fileID: 1814519123}
   inactiveIcon: {fileID: 91164432}
 --- !u!1 &400279576
@@ -2225,7 +2225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400279577}
   m_Layer: 5
-  m_Name: StoneCollectionGroup
+  m_Name: SpellCollectionGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2339,7 +2339,7 @@ GameObject:
   - component: {fileID: 433612052}
   - component: {fileID: 433612053}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_3
+  m_Name: EqupSlot_Ice_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2378,7 +2378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 15
   activeIcon: {fileID: 1600187182}
   inactiveIcon: {fileID: 13126175}
 --- !u!1 &449413655
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 2
   activeIcon: {fileID: 1241096379}
   inactiveIcon: {fileID: 337995256}
 --- !u!1 &458317911
@@ -3221,7 +3221,7 @@ GameObject:
   - component: {fileID: 525487091}
   - component: {fileID: 525487092}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_1
+  m_Name: EqupSlot_Ice_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 13
   activeIcon: {fileID: 576285330}
   inactiveIcon: {fileID: 163060218}
 --- !u!1 &534222924
@@ -3837,7 +3837,7 @@ GameObject:
   - component: {fileID: 654270674}
   - component: {fileID: 654270675}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_1
+  m_Name: EqupSlot_Fire_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3876,7 +3876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 7
   activeIcon: {fileID: 1748619227}
   inactiveIcon: {fileID: 332283693}
 --- !u!1 &666508579
@@ -4153,7 +4153,7 @@ GameObject:
   - component: {fileID: 722248384}
   - component: {fileID: 722248385}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_2
+  m_Name: EqupSlot_Ice_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4192,7 +4192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 14
   activeIcon: {fileID: 1867702523}
   inactiveIcon: {fileID: 840928856}
 --- !u!1 &723537652
@@ -4697,7 +4697,7 @@ GameObject:
   - component: {fileID: 794580487}
   - component: {fileID: 794580488}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_4
+  m_Name: EqupSlot_Fire_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4736,7 +4736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 10
   activeIcon: {fileID: 596200458}
   inactiveIcon: {fileID: 1166576263}
 --- !u!1 &796716988
@@ -5394,7 +5394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 3
   activeIcon: {fileID: 2103856515}
   inactiveIcon: {fileID: 1429883388}
 --- !u!1 &908943473
@@ -5447,7 +5447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 1
   activeIcon: {fileID: 522682456}
   inactiveIcon: {fileID: 1160297227}
 --- !u!1 &915685623
@@ -5816,6 +5816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacf2c3edf49546dcaecc5dc5f3f896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &933793803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6083,7 +6084,6 @@ Transform:
   - {fileID: 173459939}
   - {fileID: 1486511196}
   - {fileID: 1724151899}
-  - {fileID: 2028016213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &950251409
@@ -8490,7 +8490,7 @@ GameObject:
   - component: {fileID: 1451751495}
   - component: {fileID: 1451751496}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_5
+  m_Name: EqupSlot_Fire_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8529,7 +8529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 11
   activeIcon: {fileID: 409067952}
   inactiveIcon: {fileID: 931697897}
 --- !u!1 &1468618082
@@ -10044,7 +10044,7 @@ GameObject:
   - component: {fileID: 1611462431}
   - component: {fileID: 1611462432}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_0
+  m_Name: EqupSlot_Ice_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10083,7 +10083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 12
   activeIcon: {fileID: 688477959}
   inactiveIcon: {fileID: 1401038234}
 --- !u!1 &1628679011
@@ -10389,7 +10389,7 @@ GameObject:
   - component: {fileID: 1712123843}
   - component: {fileID: 1712123844}
   m_Layer: 5
-  m_Name: StoneCollectionPanel
+  m_Name: SpellCollectionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10428,7 +10428,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06dcd2745ad94b8e8d1deb2dbd529f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - {fileID: 2132520776}
+  - {fileID: 908943475}
+  - {fileID: 449413657}
+  - {fileID: 892296351}
+  - {fileID: 104824930}
+  - {fileID: 373847650}
+  - {fileID: 1968324470}
+  - {fileID: 654270675}
+  - {fileID: 1907131848}
+  - {fileID: 234613706}
+  - {fileID: 794580488}
+  - {fileID: 1451751496}
+  - {fileID: 1611462432}
+  - {fileID: 525487092}
+  - {fileID: 722248385}
+  - {fileID: 433612053}
+  - {fileID: 324634037}
+  - {fileID: 286131300}
 --- !u!1 &1712161658
 GameObject:
   m_ObjectHideFlags: 0
@@ -12058,7 +12076,7 @@ GameObject:
   - component: {fileID: 1907131847}
   - component: {fileID: 1907131848}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_2
+  m_Name: EqupSlot_Fire_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12097,7 +12115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 8
   activeIcon: {fileID: 1759097059}
   inactiveIcon: {fileID: 335282408}
 --- !u!1 &1910805891
@@ -12411,7 +12429,7 @@ GameObject:
   - component: {fileID: 1968324469}
   - component: {fileID: 1968324470}
   m_Layer: 5
-  m_Name: EqupSlot_Ground_0
+  m_Name: EqupSlot_Fire_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12450,7 +12468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4715dfbf749409cb5a7e771fb56624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 6
   activeIcon: {fileID: 1588532023}
   inactiveIcon: {fileID: 419025729}
 --- !u!1 &1982205987
@@ -12724,51 +12742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994464384}
   m_CullTransparentMesh: 1
---- !u!1 &2028016212
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2028016213}
-  - component: {fileID: 2028016214}
-  m_Layer: 0
-  m_Name: PoolManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2028016213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028016212}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 950251408}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2028016214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028016212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b334c6db4962941d39eda1f2b8e215e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefabs: []
 --- !u!1 &2041722255
 GameObject:
   m_ObjectHideFlags: 0

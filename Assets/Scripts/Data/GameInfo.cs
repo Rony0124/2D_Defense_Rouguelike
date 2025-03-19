@@ -21,6 +21,19 @@ namespace Data
             public AnimationCurve curve;
         }
         
+        [Serializable]
+        public struct ItemProbabilityTable
+        {
+            public float[] probabilities; 
+        }
+        
+        [Serializable]
+        public class ItemPool
+        {
+            public int Grade;
+            public List<SpellInfo> Items;
+        }
+        
         public enum DifficultyType
         {
             Power,
@@ -32,6 +45,10 @@ namespace Data
         
         [Header("Difficulty")]
         public List<DifficultyValue> difficultyValues;
+        
+        [Header("Item Probability")]
+        public List<ItemProbabilityTable> itemProbability;
+        public List<ItemPool> itemPools;
         
         public float GetDifficultyValue(DifficultyType valueType, float time, float defaultValue = 0.0f)
         {

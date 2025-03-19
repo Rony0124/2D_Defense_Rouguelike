@@ -13,6 +13,3 @@ MonoBehaviour:
   m_Name: CurrencyItemInfo_Diamond
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  onConsumeEffect:
-    m_PersistentCalls:
-      m_Calls: []

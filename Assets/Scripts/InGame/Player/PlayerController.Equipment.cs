@@ -11,6 +11,8 @@ namespace InGame.Player
     {
         public ObservableList<SpellItem> equippedSpellItems;
         public List<IProjectileHandler> projectileHandlers;
+
+        public int itemProbabilityLevel { get; set; }
         
         private void EquippedSpellItemsOnListChanged(object sender, ListChangedEventArgs e)
         {
