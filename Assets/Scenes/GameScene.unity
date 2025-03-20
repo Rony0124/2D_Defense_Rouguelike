@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 9
   itemCountText: {fileID: 1747930396}
-  activeSlotIcon: {fileID: 0}
+  activeSlotIcon: {fileID: 1910805895}
   activeIcon: {fileID: 523121323}
   inactiveIcon: {fileID: 621724636}
 --- !u!1 &245579503
@@ -6645,7 +6645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 10
   itemCountText: {fileID: 748949435}
-  activeSlotIcon: {fileID: 0}
+  activeSlotIcon: {fileID: 1807837936}
   activeIcon: {fileID: 596200458}
   inactiveIcon: {fileID: 1166576263}
 --- !u!1 &796716988
@@ -8316,7 +8316,7 @@ MonoBehaviour:
   spawnController: {fileID: 1724151900}
   poolObj: {fileID: 5864967030036041990, guid: 110f9bc38db764990af391fcd984d049, type: 3}
   petSpawnPoint: {fileID: 414259984}
-  maxHealth: 100
+  maxHealth: 1000
   petInfos:
   - {fileID: 11400000, guid: 7b40797fa6ac24ae5ab011b6f27751ec, type: 2}
   - {fileID: 11400000, guid: 04f571a764c6947a0bdebe29a893b6fb, type: 2}
@@ -11056,7 +11056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 11
   itemCountText: {fileID: 519703129}
-  activeSlotIcon: {fileID: 0}
+  activeSlotIcon: {fileID: 48276051}
   activeIcon: {fileID: 409067952}
   inactiveIcon: {fileID: 931697897}
 --- !u!1 &1468618082
@@ -15827,7 +15827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 8
   itemCountText: {fileID: 1091247357}
-  activeSlotIcon: {fileID: 0}
+  activeSlotIcon: {fileID: 687861336}
   activeIcon: {fileID: 1759097059}
   inactiveIcon: {fileID: 335282408}
 --- !u!1 &1910805891

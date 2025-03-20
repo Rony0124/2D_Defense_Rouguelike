@@ -46,6 +46,15 @@ namespace InGame.Player
             if (newVal <= 0)
             {
                 IsDead.Value = true;
+                foreach (var shooter in  projectileHandlers)
+                {
+                    var poolProjectile = shooter.poolProjectile;
+                    poolProjectile.Clear();
+                    Destroy(poolProjectile);
+                }
+               
+                projectileHandlers.Clear();
+                spawnController.ClearAllEnemy();
             }
         }
 

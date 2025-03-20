@@ -40,14 +40,9 @@ namespace InGame
             canSpawn = false;
         }
 
-        private void ClearAllEnemy()
+        public void ClearAllEnemy()
         {
-            foreach (var enemy in enemies)
-            {
-                Destroy(enemy);
-            }
-            
-            enemies.Clear();
+            enemyPool.Clear();
         }
         
         void Update()

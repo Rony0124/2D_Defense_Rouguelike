@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 580648282109387428, guid: 3f2696bbf0ba84b8e8b2779185d43930, type: 3}
       propertyPath: m_Name
-      value: ProjectileBase
+      value: Projectile_Spell_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 788248382901911362, guid: 3f2696bbf0ba84b8e8b2779185d43930, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8501429276636464955, guid: 3f2696bbf0ba84b8e8b2779185d43930, type: 3}
       propertyPath: m_LocalPosition.x

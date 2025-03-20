@@ -15,6 +15,6 @@ MonoBehaviour:
   monsterGraphic: {fileID: 3928141036578386383, guid: 8686a24ef367841ec87108f082106aba, type: 3}
   moveSpeed: 1
   power: 5
-  health: 10
+  health: 1000
   gold: 100
   diamond: 0

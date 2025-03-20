@@ -136,6 +136,9 @@ namespace InGame.Enemy
             SetAnimatorParamTrigger(DeathId);
             
             await UniTask.WaitForSeconds(1);
+
+            if (gameObject == null)
+                return;
             
             spawner.EnemyPool.ReturnObject(this);
             

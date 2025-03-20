@@ -38,7 +38,7 @@ namespace InGame
             return obj;
         }
 
-        public T GetObject()
+        public virtual T GetObject()
         {
             if (pool.Count == 0)
             {
@@ -50,10 +50,19 @@ namespace InGame
             return obj;
         }
 
-        public void ReturnObject(T obj)
+        public virtual void ReturnObject(T obj)
         {
             obj.gameObject.SetActive(false);
             pool.Enqueue(obj);
+        }
+
+        public void Clear()
+        {
+            while (pool.Count > 0)
+            {
+                var obj = pool.Dequeue();
+                Destroy(obj.gameObject);
+            }
         }
     }
 }

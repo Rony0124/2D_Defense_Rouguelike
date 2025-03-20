@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Data;
 using InGame.Player;
 using Item;
@@ -12,6 +13,8 @@ namespace InGame
         public PlayerController ownerPlayer;
 
         private float shootTime;
+        
+        private List<Projectile> projectiles = new List<Projectile>();
 
         public void SetShooter(SpellItem item, ObjectPoolProjectile poolProjectile, PlayerController player)
         {
@@ -33,6 +36,13 @@ namespace InGame
             projectile.ownerPlayer = ownerPlayer;
             
             projectile.Fire(poolProjectile).Forget();
+            
+            projectiles.Add(projectile);
+        }
+
+        public void ClearProjectile()
+        {
+            poolProjectile.Clear();
         }
     }
 
