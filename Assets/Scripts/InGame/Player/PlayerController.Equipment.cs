@@ -13,7 +13,9 @@ namespace InGame.Player
         public List<PetInfo> petInfos;
         public List<ProjectileShooter> projectileHandlers;
 
-        public int itemProbabilityLevel { get; set; }
+        public ObservableVar<int> itemProbabilityLevel = new();
+        public ObservableVar<int> gold = new();
+        public ObservableVar<int> diamond = new();
         
         private void EquippedSpellItemsOnListChanged(object sender, ListChangedEventArgs e)
         {
@@ -51,7 +53,7 @@ namespace InGame.Player
 
         public void EnhanceProbabilityLevel()
         {
-            itemProbabilityLevel++;
+            itemProbabilityLevel.Value++;
         }
     }
 }
