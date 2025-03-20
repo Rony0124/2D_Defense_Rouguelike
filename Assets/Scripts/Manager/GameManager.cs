@@ -16,12 +16,13 @@ namespace Manager
         [Header("Game Time")]
         [SerializeField]
         private Timer timer;
-        [SerializeField]
-        private float gameReadyDuration;
         
         [Header("Player")]
         [SerializeField]
         private PlayerController player;
+        
+        [SerializeField]
+        private GameObject mask;
         
         private ObservableVar<Define.GameState> gameState;
         private int currentGameDifficulty;
@@ -42,6 +43,7 @@ namespace Manager
             gameState.OnValueChanged += OnGameStateChanged;
             
             EventBus.Register(Define.GameState.GameBegin, OnGameBegin);
+            EventBus.Register(Define.GameState.GamePlay, OnGamePlay);
         }
 
         private void Start()
@@ -65,7 +67,13 @@ namespace Manager
 
         private void OnGameBegin()
         {
-            timer.InitTimer();
+            timer.InitTimerOnBegin();
+        }
+
+        private void OnGamePlay()
+        {
+            mask.SetActive(false);
+            timer.InitTimerOnGamePlay();
         }
 
         public GameInfo.RoundData GetCurrentRoundInfoByDifficulty(int difficulty)

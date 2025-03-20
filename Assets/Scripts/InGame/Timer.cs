@@ -41,13 +41,18 @@ namespace InGame
         
         public bool HasBountyTimeReached => hasBountyTimeReached;
 
-        public void InitTimer()
+        public void InitTimerOnBegin()
         {
             timerBeginTime = Time.time;
             timerStarted = true;
-            currentRoundGoalTime = gameRoundDuration;
-            currentBountyGoalTime = bountyDuration;
             currentGamereadyGoalTime = gameReadyDuration;
+        }
+
+        public void InitTimerOnGamePlay()
+        {
+            var timeSpan = (int)GetTimeSpan();
+            currentRoundGoalTime = timeSpan + gameRoundDuration;
+            currentBountyGoalTime = timeSpan+ bountyDuration;
         }
 
         private void Update()
@@ -70,10 +75,13 @@ namespace InGame
                 if (gameReadyRemainTime <= 0)
                 {
                     currentGamereadyGoalTime = -1;
+                    gameReadyTimeText.text = string.Empty;
                     GameManager.Instance.SetGameState(Define.GameState.GamePlay);
                 }
             }
-          
+            
+            if(GameManager.Instance.GameState != Define.GameState.GamePlay)
+                return;
             
             int gameRoundRemainTime = Math.Max(0, (int)Math.Ceiling(RemainTimeToGoalTime(currentRoundGoalTime)));
             if (gameRoundRemainTime > 0)
