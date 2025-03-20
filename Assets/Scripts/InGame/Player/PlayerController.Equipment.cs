@@ -48,5 +48,10 @@ namespace InGame.Player
                     break;
             }
         }
+
+        public void EnhanceProbabilityLevel()
+        {
+            itemProbabilityLevel++;
+        }
     }
 }

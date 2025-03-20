@@ -10,8 +10,13 @@ namespace InGame.Player
         [SerializeField] private SpawnController spawnController;
         
         [SerializeField] private GameObject poolObj;
+        [SerializeField] private Transform petSpawnPoint;
+        
+        private PetController petController;
         
         public ObservableVar<bool> IsDead;
+        public Transform PetSpawnPoint => petSpawnPoint;
+        public PetController PetController => petController;
         
         private void Awake()
         {
@@ -56,13 +61,17 @@ namespace InGame.Player
 
         private void OnGamePlay()
         {
-            Debug.Log("{OnGamePlay} player controller");
             spawnController.InitSpawn();
         }
 
         private void OnGameEnd()
         {
             spawnController.StopSpawn();
+        }
+
+        public void SetPet(PetController pet)
+        {
+            petController = pet;
         }
 
         private void OnDestroy()

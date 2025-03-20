@@ -1,6 +1,8 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Data;
 using Manager;
+using TMPro;
 using UnityEngine;
 using Util;
 
@@ -8,9 +10,10 @@ namespace InGame.Enemy
 {
     public class EnemyController : MonoBehaviour, IDamageHandler
     {
+        public Action OnDead;
         public ObservableVar<bool> IsDead;
 
-        public ObjectPoolEnemy enemyPool { get; set; }
+        public SpawnController spawner { get; set; }
         
         [SerializeField]
         private float attackInterval;
@@ -106,6 +109,14 @@ namespace InGame.Enemy
             health -= damage;
             if(health <= 0)
                 IsDead.Value = true;
+
+            ShowDamageText((int)damage);
+        }
+
+        private void ShowDamageText(int damage)
+        {
+            var txt = spawner.TextPool.GetObjectAsync(damage);
+            txt.transform.position = transform.position + Vector3.up * 1.2f;
         }
 
         private void OnDeadValueChanged(bool oldValue, bool newValue)
@@ -120,7 +131,8 @@ namespace InGame.Enemy
         {
             SetAnimatorParamTrigger(DeathId);
             await UniTask.WaitForSeconds(1);
-            enemyPool.ReturnObject(this);
+            spawner.EnemyPool.ReturnObject(this);
+            OnDead?.Invoke();
         }
         
         private void SetAnimatorParamTrigger(int id)

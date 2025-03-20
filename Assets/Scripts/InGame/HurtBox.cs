@@ -18,8 +18,16 @@ namespace InGame
                 return;
 
             var projectile = hitBox.GetComponent<Projectile>();
-            
-            damageHandler.TakeDamage(projectile.spellInfo.spellDamage);
+            if (projectile)
+            {
+                damageHandler.TakeDamage(projectile.spellInfo.spellDamage);
+                return;
+            }
+
+            if (hitBox.pet)
+            {
+                damageHandler.TakeDamage(hitBox.pet.GetDamage());
+            }
         }
     }
 

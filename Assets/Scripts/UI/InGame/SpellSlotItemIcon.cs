@@ -25,14 +25,12 @@ namespace UI.InGame
             if (Time.time - doubleClickedTime < interval)
             {
                 doubleClickedTime = -1.0f;
-                Debug.Log("doubleClicked!!");
-
+               
                 var player = GameManager.Instance.Player;
                 
                 var index = player.equippedSpellItems
                     .FindIndex(equippedItem => equippedItem.spellInfo.itemType == item.spellInfo.itemType);
-
-                Debug.Log("index!!" + index);
+                
                 if (index < 0)
                 {
                     return;
@@ -40,7 +38,6 @@ namespace UI.InGame
 
                 var selectedSpellItem = player.equippedSpellItems[index];
                 
-                Debug.Log("selectedSpellItem value" + selectedSpellItem.ItemValue.Value);
                 if (selectedSpellItem.ItemValue.Value >= 3)
                 {
                     if (selectedSpellItem.spellInfo.itemType
@@ -61,16 +58,10 @@ namespace UI.InGame
                         player.equippedSpellItems.Add(selectedSpellItem);
                     }
                     
-                    Debug.Log("선택한 아이템 타입" + selectedSpellItem.spellInfo.itemType);
-                    
                     int newItemType = (int)selectedSpellItem.spellInfo.itemType + 1;
-                    
-                    Debug.Log("새로운 아이템 타입" + (Define.SpellItem)newItemType);
                     
                     var itemIndex = player.equippedSpellItems
                         .FindIndex(spellItem => (int)spellItem.spellInfo.itemType == newItemType);
-                    
-                    Debug.Log("새로운 아이템 존재하는지 확인 : " + (itemIndex >= 0));
                     
                     if (itemIndex < 0)
                     {

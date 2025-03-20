@@ -13,9 +13,13 @@ namespace InGame
         [SerializeField] private ObjectPoolEnemy enemyPool;
         [SerializeField] private Transform nextSpawnPoint;
         [SerializeField] private Transform endPoint;
+        [SerializeField] private ObjectPoolText textPool;
 
         private List<EnemyController> enemies;
         private bool canSpawn;
+
+        public ObjectPoolEnemy EnemyPool => enemyPool;
+        public ObjectPoolText TextPool => textPool;
         
         void Awake()
         {
@@ -75,13 +79,20 @@ namespace InGame
         private void SpawnEnemy()
         {
             var currentEnemy = enemyPool.GetObject();
+            currentEnemy.transform.position = enemyPool.transform.position;
+            
             var difficulty = GameManager.Instance.CurrentGameDifficulty;
             var monsterInfo = GameManager.Instance.GetCurrentRoundInfoByDifficulty(difficulty).normalMonsterInfo;
             var power = GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Power, difficulty);
             var health = GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Health, difficulty);
             
             currentEnemy.Initialize(monsterInfo, power,  health, endPoint);
-            currentEnemy.enemyPool = enemyPool;
+            currentEnemy.spawner = this;
+
+            currentEnemy.OnDead = () =>
+            {
+                enemies.Remove(currentEnemy);
+            };
             
             enemies.Add(currentEnemy);
         }

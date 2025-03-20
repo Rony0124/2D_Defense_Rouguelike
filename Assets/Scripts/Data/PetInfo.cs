@@ -7,9 +7,6 @@ namespace Data
     public class PetInfo : ItemInfo
     {
         public GameObject petPrefab;
-        public float damage;
-        public float attackInterval;
-        public float attackDuration;
         public Define.SpellItem[] unlockSpells;
     }
 }

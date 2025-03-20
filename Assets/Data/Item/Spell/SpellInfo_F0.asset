@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   itemType: 6
-  projectilePrefab: {fileID: 3017149750585600287, guid: b37ac4ad51c3a436e8a1a0068e4ab4dd, type: 3}
-  projectileSpeed: 0
+  projectilePrefab: {fileID: 8044141260842387421, guid: c63122d591a1a4ecf8dbac75e37681cd, type: 3}
+  projectileSpeed: 1
   projectileRange: 0
-  spellDamage: 0
-  spellInterval: 0
-  spellDuration: 0
+  spellDamage: 11
+  spellInterval: 1
+  spellDuration: 4

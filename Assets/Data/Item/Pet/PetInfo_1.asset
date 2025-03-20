@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: PetInfo_1
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  petPrefab: {fileID: 0}
-  damage: 0
-  attackInterval: 0
-  attackDuration: 0
+  petPrefab: {fileID: 203024233415485435, guid: 96bcb13278de641c48b23bacd0b1c0fb, type: 3}
   unlockSpells: 0600000001000000

@@ -8,7 +8,7 @@ namespace InGame
         [SerializeField] private T prefab;
         [SerializeField] private int initialPoolSize = 10;
         
-        private readonly Queue<T> pool = new Queue<T>();
+        protected readonly Queue<T> pool = new Queue<T>();
 
         protected virtual void Awake()
         {
@@ -31,7 +31,7 @@ namespace InGame
             }
         }
 
-        private T CreateNewObject()
+        protected T CreateNewObject()
         {
             T obj = Instantiate(prefab, transform);
             obj.gameObject.SetActive(false);

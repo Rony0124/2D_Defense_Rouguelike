@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using Data;
 using InGame.Player;
 using Item;
@@ -42,11 +39,6 @@ namespace UI.InGame
            
        }
 
-       private void OnPetButtonClicked()
-       {
-           inGameView.petCollectionPanel.gameObject.SetActive(!inGameView.petCollectionPanel.gameObject.activeSelf);
-       }
-
        private void OnSpellButtonClicked()
        {
            var rItem = GetRandomItem();
@@ -55,15 +47,11 @@ namespace UI.InGame
                return;
            }
            
-           Debug.Log(rItem.itemType);
-           
            var itemIndex = player.equippedSpellItems.FindIndex(item => item.info.Id == rItem.Id);
            if (itemIndex < 0)
            {
                var newItem = new SpellItem(rItem, 1);
                player.equippedSpellItems.Add(newItem);
-               
-               Debug.Log(newItem.ItemValue.Value);
            }
            else
            {
@@ -72,8 +60,6 @@ namespace UI.InGame
 
                player.equippedSpellItems.Remove(newItem);
                player.equippedSpellItems.Add(newItem);
-               
-               Debug.Log(newItem.ItemValue.Value);
            }
            
           

@@ -1,5 +1,6 @@
 using System.Linq;
 using Data;
+using InGame;
 using Manager;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace UI.InGame
         [SerializeField] private Transform inactiveIcon;
         [SerializeField] private TextMeshProUGUI inactiveIconText;
         [SerializeField] private Transform activeIcon;
+        [SerializeField] private TextMeshProUGUI activeIconText;
         
         private PetInfo _petInfo;
         
@@ -21,7 +23,6 @@ namespace UI.InGame
 
         public void UpdateSlot()
         {
-            Debug.Log("1");
             var player = GameManager.Instance.Player;
             var satisfiedCount = 0;
             
@@ -35,14 +36,11 @@ namespace UI.InGame
 
             if (satisfiedCount == _petInfo.unlockSpells.Length)
             {
-                Debug.Log("2");
                 activeIcon.gameObject.SetActive(true);
                 inactiveIcon.gameObject.SetActive(false);
             }
             else
             {
-                Debug.Log("3");
-                Debug.Log(satisfiedCount);
                 inactiveIconText.text = satisfiedCount + "/" + _petInfo.unlockSpells.Length;
                 activeIcon.gameObject.SetActive(false);
                 inactiveIcon.gameObject.SetActive(true);
@@ -51,7 +49,12 @@ namespace UI.InGame
 
         public void SpawnPet()
         {
+            var player = GameManager.Instance.Player;
+            var pet = Instantiate(_petInfo.petPrefab, player.PetSpawnPoint).GetComponent<PetController>();
             
+            player.SetPet(pet);
+
+            activeIconText.text = "소환완료";
         }
     }
 }

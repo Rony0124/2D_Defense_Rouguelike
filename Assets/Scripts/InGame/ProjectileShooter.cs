@@ -27,6 +27,8 @@ namespace InGame
             
             shootTime = time + spellInfo.spellInterval;
             var projectile = poolProjectile.GetObject();
+            projectile.transform.position = ownerPlayer.transform.position;
+            
             projectile.SetProjectile(spellInfo);
             projectile.ownerPlayer = ownerPlayer;
             
