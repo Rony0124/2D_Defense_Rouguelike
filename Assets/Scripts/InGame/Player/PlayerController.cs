@@ -13,10 +13,14 @@ namespace InGame.Player
         [SerializeField] private Transform petSpawnPoint;
         
         private PetController petController;
+
+        public ObservableVar<float> currentHealth;
+        public float maxHealth;
         
         public ObservableVar<bool> IsDead;
         public Transform PetSpawnPoint => petSpawnPoint;
         public PetController PetController => petController;
+        public SpawnController SpawnController => spawnController;
         
         private void Awake()
         {
@@ -28,9 +32,21 @@ namespace InGame.Player
             equippedSpellItems.ListChanged += EquippedSpellItemsOnListChanged;
 
             projectileHandlers = new();
+
+            currentHealth = new();
+            currentHealth.Value = maxHealth;
+            currentHealth.OnValueChanged += OnHealthValueChanged;
             
             EventBus.Register(Define.GameState.GamePlay, OnGamePlay);
             EventBus.Register(Define.GameState.GameEnd, OnGameEnd);
+        }
+        
+        private void OnHealthValueChanged(float oldVal, float newVal)
+        {
+            if (newVal <= 0)
+            {
+                IsDead.Value = true;
+            }
         }
 
         private void OnIsDeadValueChanged(bool oldVal, bool newVal)
@@ -56,7 +72,7 @@ namespace InGame.Player
 
         public void TakeDamage(float damage)
         {
-            
+            currentHealth.Value -= damage;
         }
 
         private void OnGamePlay()

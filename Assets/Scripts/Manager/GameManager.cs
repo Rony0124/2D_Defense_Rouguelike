@@ -25,11 +25,15 @@ namespace Manager
         
         private ObservableVar<Define.GameState> gameState;
         private int currentGameDifficulty;
+        private int currentGameRound;
         
         public PlayerController Player => player;
         public Define.GameState GameState => gameState.Value;
         public int CurrentGameDifficulty => currentGameDifficulty;
         public GameInfo GameInfo => gameInfo;
+        public int CurrentGameRound => currentGameRound;
+        
+        public Timer Timer => timer;
         
         private void Awake()
         {
@@ -43,6 +47,7 @@ namespace Manager
         private void Start()
         {
             gameState.Value = Define.GameState.GameBegin;
+            timer.InitTimer();
         }
 
         public void SetGameState(Define.GameState gameState)
@@ -79,5 +84,16 @@ namespace Manager
         {
             return gameInfo.GetDifficultyValue(difficultyType, difficulty);
         }
+
+        public void SetNextGameRound()
+        {
+            currentGameRound++;
+            if (currentGameRound % 10 == 0)
+            {
+                Debug.Log("boss");
+            }
+        }
+        
+       
     }
 }

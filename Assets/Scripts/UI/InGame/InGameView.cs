@@ -12,11 +12,7 @@ namespace UI.InGame
        public enum InGameButton
        {
            BountyButton,
-           SpellButton,
-           MineButton,
-           Mine1Button,
-           Mine3Button,
-           Mine4Button,
+           SpellButton
        }
 
        public enum InGameText
@@ -28,14 +24,14 @@ namespace UI.InGame
        
        public Button BountyButton { get; private set; }
        public Button SpellButton { get; private set; }
-       public Button MineButton { get; private set; }
-       public Button Mine1Button { get; private set; }
-       public Button Mine3Button { get; private set; }
-       public Button Mine4Button { get; private set; }
+       public Button Mine1Button;
+       public Button Mine3Button;
+       public Button Mine4Button;
        public TextMeshProUGUI GoldText { get; private set; }
        public TextMeshProUGUI DiamondText { get; private set; }
        public TextMeshProUGUI ProbabilityText { get; private set; }
        
+       public Transform bountyCollectionPanel;
        public Transform petCollectionPanel;
        public SpellCollectionPanel spellCollectionPanel;
        
@@ -46,10 +42,6 @@ namespace UI.InGame
          
            BountyButton = Get<Button>((int)InGameButton.BountyButton);
            SpellButton = Get<Button>((int)InGameButton.SpellButton);
-           MineButton = Get<Button>((int)InGameButton.MineButton);
-           Mine1Button = Get<Button>((int)InGameButton.Mine1Button);
-           Mine3Button = Get<Button>((int)InGameButton.Mine3Button);
-           Mine4Button = Get<Button>((int)InGameButton.Mine4Button);
            GoldText = Get<TextMeshProUGUI>((int)InGameText.GoldText);
            DiamondText = Get<TextMeshProUGUI>((int)InGameText.DiamondText);
            ProbabilityText = Get<TextMeshProUGUI>((int)InGameText.ProbabilityText);

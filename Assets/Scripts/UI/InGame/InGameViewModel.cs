@@ -19,9 +19,7 @@ namespace UI.InGame
 
        private void Start()
        {
-           inGameView.BountyButton.onClick.AddListener(OnBountyButtonClicked);
            inGameView.SpellButton.onClick.AddListener(OnSpellButtonClicked);
-           inGameView.MineButton.onClick.AddListener(OnMinButtonClicked);
            inGameView.Mine1Button.onClick.AddListener(() => MineButtonClicked(1));
            inGameView.Mine3Button.onClick.AddListener(() => MineButtonClicked(3));
            inGameView.Mine4Button.onClick.AddListener(() => MineButtonClicked(4));
@@ -68,7 +66,7 @@ namespace UI.InGame
 
            for (int i = 0; i < probabilities.Length; i++)
            {
-               sb.Append($"{i}: {probabilities[0]}% ");
+               sb.Append($"{i}: {probabilities[i]}% ");
            }
            
            inGameView.ProbabilityText.text = sb.ToString();
@@ -82,9 +80,20 @@ namespace UI.InGame
            inGameView.spellCollectionPanel.UpdateSlots();
        }
 
-       private void OnBountyButtonClicked()
+       public void OnBountyButtonClicked(bool isActive)
        {
+           if (!GameManager.Instance.Timer.HasBountyTimeReached)
+               return;
            
+           inGameView.bountyCollectionPanel.gameObject.SetActive(isActive);
+       }
+
+       public void OnBountySpawnButtonClicked(int index)
+       {
+           player.SpawnController.SpawnBountyEnemy(index);
+           GameManager.Instance.Timer.RestartBountyTime();
+
+           inGameView.bountyCollectionPanel.gameObject.SetActive(false);
        }
 
        private void OnSpellButtonClicked()
@@ -109,11 +118,6 @@ namespace UI.InGame
                player.equippedSpellItems.Remove(newItem);
                player.equippedSpellItems.Add(newItem);
            }
-       }
-
-       private void OnMinButtonClicked()
-       {
-           
        }
 
        private SpellInfo GetRandomItem()

@@ -14,6 +14,9 @@ namespace InGame
         [SerializeField] private Transform nextSpawnPoint;
         [SerializeField] private Transform endPoint;
         [SerializeField] private ObjectPoolText textPool;
+        
+        [Header("Bounty")]
+        [SerializeField] private List<MonsterInfo> bountyEnemies;
 
         private List<EnemyController> enemies;
         private bool canSpawn;
@@ -83,8 +86,8 @@ namespace InGame
             
             var difficulty = GameManager.Instance.CurrentGameDifficulty;
             var monsterInfo = GameManager.Instance.GetCurrentRoundInfoByDifficulty(difficulty).normalMonsterInfo;
-            var power = GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Power, difficulty);
-            var health = GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Health, difficulty);
+            var power = monsterInfo.power * GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Power, difficulty);
+            var health = monsterInfo.health * GameManager.Instance.GetDifficultyValue(GameInfo.DifficultyType.Health, difficulty);
             
             currentEnemy.Initialize(monsterInfo, power,  health, endPoint);
             currentEnemy.spawner = this;
@@ -95,6 +98,19 @@ namespace InGame
             };
             
             enemies.Add(currentEnemy);
+        }
+
+        public void SpawnBountyEnemy(int index)
+        {
+            var currentEnemy = enemyPool.GetObject();
+            currentEnemy.transform.position = enemyPool.transform.position;
+            
+            var monsterInfo = bountyEnemies[index];
+            var power = monsterInfo.power;
+            var health = monsterInfo.health;
+            
+            currentEnemy.Initialize(monsterInfo, power,  health, endPoint);
+            currentEnemy.spawner = this;
         }
         
         private bool IsValidEnemy(EnemyController enemyController)
