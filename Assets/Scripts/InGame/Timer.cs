@@ -2,16 +2,23 @@ using System;
 using Manager;
 using TMPro;
 using UnityEngine;
+using Util;
 
 namespace InGame
 {
     public class Timer : MonoBehaviour
     {
         [SerializeField]
+        private TextMeshProUGUI gameReadyTimeText;
+        
+        [SerializeField]
         private TextMeshProUGUI roundTimeText;
         
         [SerializeField]
         private TextMeshProUGUI bountyTimeText;
+        
+        [SerializeField]
+        private int gameReadyDuration;
         
         [SerializeField]
         private int gameRoundDuration;
@@ -23,10 +30,12 @@ namespace InGame
         
         private bool timerStarted;
         private bool hasBountyTimeReached;
-        
+
+        private int lastGamereadyRemainTime;
         private int lastRoundRemainTime;
         private int lastBountyRemainTime;
         
+        private int currentGamereadyGoalTime;
         private int currentRoundGoalTime;
         private int currentBountyGoalTime;
         
@@ -38,12 +47,33 @@ namespace InGame
             timerStarted = true;
             currentRoundGoalTime = gameRoundDuration;
             currentBountyGoalTime = bountyDuration;
+            currentGamereadyGoalTime = gameReadyDuration;
         }
 
         private void Update()
         {
             if (!timerStarted)
                 return;
+
+            if (currentGamereadyGoalTime > 0)
+            {
+                int gameReadyRemainTime = Math.Max(0, (int)Math.Ceiling(RemainTimeToGoalTime(currentGamereadyGoalTime)));
+                if (gameReadyRemainTime > 0)
+                {
+                    if (lastGamereadyRemainTime != gameReadyRemainTime)
+                    {
+                        gameReadyTimeText.text = gameReadyRemainTime.ToString();
+                        lastGamereadyRemainTime = gameReadyRemainTime;
+                    }
+                }
+
+                if (gameReadyRemainTime <= 0)
+                {
+                    currentGamereadyGoalTime = -1;
+                    GameManager.Instance.SetGameState(Define.GameState.GamePlay);
+                }
+            }
+          
             
             int gameRoundRemainTime = Math.Max(0, (int)Math.Ceiling(RemainTimeToGoalTime(currentRoundGoalTime)));
             if (gameRoundRemainTime > 0)

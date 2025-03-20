@@ -41,13 +41,12 @@ namespace Manager
             
             gameState.OnValueChanged += OnGameStateChanged;
             
-            EventBus.Register(Define.GameState.GameBegin, () => OnGameBegin().Forget());
+            EventBus.Register(Define.GameState.GameBegin, OnGameBegin);
         }
 
         private void Start()
         {
-            gameState.Value = Define.GameState.GameBegin;
-            timer.InitTimer();
+            SetGameState(Define.GameState.GameBegin);
         }
 
         public void SetGameState(Define.GameState gameState)
@@ -64,13 +63,9 @@ namespace Manager
             EventBus.Publish(newState);
         }
 
-        private async UniTaskVoid OnGameBegin()
+        private void OnGameBegin()
         {
-           // timer.InitTimer();
-            
-            await UniTask.WaitForSeconds(gameReadyDuration);
-            
-            gameState.Value = Define.GameState.GamePlay;
+            timer.InitTimer();
         }
 
         public GameInfo.RoundData GetCurrentRoundInfoByDifficulty(int difficulty)
@@ -90,7 +85,7 @@ namespace Manager
             currentGameRound++;
             if (currentGameRound % 10 == 0)
             {
-                Debug.Log("boss");
+                Debug.Log($"boss");
             }
         }
         
