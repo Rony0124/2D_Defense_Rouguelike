@@ -24,6 +24,8 @@ namespace InGame.Enemy
         private float power;
         private float moveSpeed;
         private float attackTime;
+        private int gold;
+        private int diamond;
 
         private Animator animator;
         
@@ -44,6 +46,8 @@ namespace InGame.Enemy
             var enemyObj = Instantiate(info.monsterGraphic, transform);
             animator = enemyObj.GetComponent<Animator>();
             moveSpeed = info.moveSpeed;
+            gold = info.gold;
+            diamond = info.diamond;
             
             this.endPoint = endPoint;
             this.power = power;
@@ -130,8 +134,15 @@ namespace InGame.Enemy
         private async UniTaskVoid OnDeadTask()
         {
             SetAnimatorParamTrigger(DeathId);
+            
             await UniTask.WaitForSeconds(1);
+            
             spawner.EnemyPool.ReturnObject(this);
+            
+            var player = GameManager.Instance.Player;
+            player.gold.Value += gold;
+            player.diamond.Value += diamond;
+            
             OnDead?.Invoke();
         }
         

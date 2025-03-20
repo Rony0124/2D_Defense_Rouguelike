@@ -7,5 +7,7 @@ namespace Data
     {
         public GameObject monsterGraphic;
         public float moveSpeed;
+        public int gold;
+        public int diamond;
     }
 }
